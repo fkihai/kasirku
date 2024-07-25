@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kasirku/src/core/utils/int_ext.dart';
 import 'package:kasirku/src/core/widgets/space_width.dart';
 import 'package:kasirku/src/core/widgets/text_button_custom.dart';
-import 'package:kasirku/src/features/home/presentation/widget/add_quantity.dart';
+import 'package:kasirku/src/features/product/presentation/widget/add_quantity.dart';
 
 import '../../../../constant/colors.dart';
 import '../../../../core/widgets/space_height.dart';
@@ -21,9 +22,8 @@ void showCustomModalBottomSheet(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Noodles Ramen', style: TextStyle(fontSize: 20.sp)),
-              Text('IDR 35.000',
-                  style:
-                      TextStyle(fontSize: 16.sp, color: AppColors.secondary)),
+              Text(35000.currenycyFormatRp,
+                  style: TextStyle(fontSize: 16.sp, color: AppColors.primary)),
               SpaceHeight(height: 20.h),
               Row(
                 children: [
@@ -34,12 +34,13 @@ void showCustomModalBottomSheet(BuildContext context) {
                   const AddQuantity(increment: true),
                   const Spacer(),
                   Text(
-                    'IDR 35.000',
-                    style:
-                        TextStyle(fontSize: 16.sp, color: AppColors.secondary),
+                    35000.currenycyFormatRp,
+                    style: TextStyle(fontSize: 16.sp, color: AppColors.primary),
                   ),
                 ],
               ),
+              const Spacer(),
+              const Text('Stock : 30'),
               const Spacer(),
               TextButtonCustom(
                 title: 'Add',

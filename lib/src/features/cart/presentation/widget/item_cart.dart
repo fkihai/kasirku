@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kasirku/src/constant/colors.dart';
+import 'package:kasirku/src/core/utils/int_ext.dart';
 
 import '../../../../core/assets/assets.gen.dart';
-import '../../../home/presentation/widget/add_quantity.dart';
+import '../../../product/presentation/widget/add_quantity.dart';
 
 class ItemCart extends StatelessWidget {
   const ItemCart({super.key});
@@ -30,8 +31,8 @@ class ItemCart extends StatelessWidget {
             ),
           ),
           title: const Text('Noodles Ramen', style: TextStyle(fontSize: 14)),
-          subtitle: const Text('IDR 35000',
-              style: TextStyle(fontSize: 14, color: AppColors.secondary)),
+          subtitle: Text(35000.currenycyFormatRp,
+              style: const TextStyle(fontSize: 14, color: AppColors.primary)),
           trailing: Wrap(
             spacing: 10.w,
             crossAxisAlignment: WrapCrossAlignment.center,

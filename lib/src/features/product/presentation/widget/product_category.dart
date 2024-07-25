@@ -32,7 +32,7 @@ class ProductCategory extends StatelessWidget {
             child: Icon(
               icon,
               size: 30.r,
-              color: AppColors.secondary,
+              color: AppColors.primary,
             ),
           ),
           SpaceHeight(height: 5.h),

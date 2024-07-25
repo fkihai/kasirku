@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kasirku/src/core/utils/int_ext.dart';
 
 import '../../../../constant/colors.dart';
 import '../../../../core/assets/assets.dart';
@@ -55,25 +56,10 @@ class ProductMenu extends StatelessWidget {
                 ),
               ),
             ),
+            const SpaceHeight(height: 20),
+            Text('Noodles Ramen', style: TextStyle(fontSize: 15.sp)),
             const SpaceHeight(height: 10),
-            Container(
-              width: 40.w,
-              height: 18.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.orange.shade900,
-              ),
-              child: const Center(
-                child: Text('-30%',
-                    style: TextStyle(color: AppColors.white, fontSize: 10)),
-              ),
-            ),
-            const SpaceHeight(height: 10),
-            Text('Noodles Ramem', style: TextStyle(fontSize: 13.sp)),
-            const Text('With Spicy Souce',
-                style: TextStyle(fontSize: 10, color: AppColors.grey)),
-            const SpaceHeight(height: 10),
-            Text('Rp.35.000', style: TextStyle(fontSize: 13.sp)),
+            Text(3500.currenycyFormatRp, style: TextStyle(fontSize: 13.sp)),
           ],
         ),
       ),

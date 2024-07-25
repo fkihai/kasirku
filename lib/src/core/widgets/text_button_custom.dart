@@ -14,7 +14,7 @@ class TextButtonCustom extends StatelessWidget {
       width: double.infinity,
       height: 40.h,
       decoration: BoxDecoration(
-          color: AppColors.secondary, borderRadius: BorderRadius.circular(10)),
+          color: AppColors.primary, borderRadius: BorderRadius.circular(10)),
       child: TextButton(
         onPressed: onPressed,
         child: Text(

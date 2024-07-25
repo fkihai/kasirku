@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kasirku/src/features/home/presentation/widget/item_total.dart';
-import 'package:kasirku/src/features/home/presentation/widget/search_field.dart';
+import 'package:kasirku/src/constant/colors.dart';
+import 'package:kasirku/src/core/widgets/drawer_widget.dart';
+import 'package:kasirku/src/features/product/presentation/widget/item_total.dart';
+import 'package:kasirku/src/features/product/presentation/widget/search_field.dart';
 
-import '../../../../constant/colors.dart';
 import '../../../../core/widgets/space_height.dart';
 import '../widget/product_category.dart';
 import '../widget/product_menu.dart';
@@ -16,34 +17,18 @@ List<Map<String, dynamic>> categories = [
   {"name": 'Fruits', "icon": Icons.egg_alt},
 ];
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-  static const routerName = 'home-page';
+class ProductPage extends StatelessWidget {
+  const ProductPage({super.key});
+  static const routerName = 'product-page';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
-          child: const CircleAvatar(
-            backgroundColor: AppColors.primary,
-            child: Icon(Icons.person),
-          ),
-        ),
-        title: const Text('FIKRI HAIKAL'),
-        actions: [
-          Padding(
-            padding: EdgeInsets.all(8.0.sp),
-            child: IconButton(
-              onPressed: () {},
-              highlightColor: Colors.transparent,
-              icon: const Icon(Icons.settings),
-            ),
-          )
-        ],
+        title: const Text('PRODUCT'),
+        centerTitle: true,
       ),
+      drawer: const DrawerWidget(),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 13.w),
         child: Column(children: [
@@ -70,7 +55,7 @@ class HomePage extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 2,
-              childAspectRatio: 0.70,
+              childAspectRatio: 0.78,
               children: <Widget>[
                 for (var i = 0; i < 8; i++) const ProductMenu()
               ],

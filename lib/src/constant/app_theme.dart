@@ -12,22 +12,20 @@ class AppTheme {
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
         fontFamily: FontFamily.poppins,
-        fontSize: 12,
+        fontSize: 14,
         fontWeight: FontWeight.w500,
         color: AppColors.black,
       ),
     ),
     appBarTheme: const AppBarTheme(
       color: AppColors.white,
-      // shape: RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.circular(20.0),
-      // ),
       titleTextStyle: TextStyle(
         fontFamily: 'Poppins',
-        color: AppColors.secondary,
-        fontSize: 14,
+        color: AppColors.black,
+        fontSize: 16,
         fontWeight: FontWeight.w600,
       ),
+      iconTheme: IconThemeData(color: AppColors.primary),
     ),
     buttonTheme: const ButtonThemeData(
       buttonColor: AppColors.secondary,

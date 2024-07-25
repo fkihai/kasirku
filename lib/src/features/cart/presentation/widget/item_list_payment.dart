@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kasirku/src/core/utils/int_ext.dart';
 
 import '../../../../constant/colors.dart';
 
@@ -7,7 +8,7 @@ class ItemListPayment extends StatelessWidget {
   const ItemListPayment({super.key, required this.title, required this.total});
 
   final String title;
-  final String total;
+  final int total;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class ItemListPayment extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Text(total, style: TextStyle(fontSize: 15.sp)),
+        Text(total.currenycyFormatRp, style: TextStyle(fontSize: 15.sp)),
       ],
     );
   }
