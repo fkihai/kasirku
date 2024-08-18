@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kasirku/src/core/utils/int_ext.dart';
-import 'package:kasirku/src/features/cart/presentation/page/cart_page.dart';
+import 'package:kasirku/src/features/product/presentation/page/cart_page.dart';
 
 import '../../../../constant/colors.dart';
 import '../../../../core/widgets/space_width.dart';
@@ -36,8 +36,7 @@ class ItemTotal extends StatelessWidget {
                 style: TextStyle(color: AppColors.white, fontSize: 13.sp)),
             SpaceWidth(width: 10.w),
             Container(
-              width: 40.w,
-              height: 40.w,
+              padding: EdgeInsets.all(5.sp),
               decoration: BoxDecoration(
                   border: Border.all(width: 1, color: AppColors.white),
                   color: AppColors.primary,

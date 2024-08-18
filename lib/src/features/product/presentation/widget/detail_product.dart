@@ -15,7 +15,7 @@ void showCustomModalBottomSheet(BuildContext context) {
     builder: (context) {
       return SizedBox(
         width: double.infinity,
-        height: 200.h,
+        height: 0.35.sh,
         child: Padding(
           padding: EdgeInsets.all(20.sp),
           child: Column(

@@ -4,7 +4,7 @@ import 'package:kasirku/src/constant/colors.dart';
 import 'package:kasirku/src/core/utils/int_ext.dart';
 
 import '../../../../core/assets/assets.gen.dart';
-import '../../../product/presentation/widget/add_quantity.dart';
+import 'add_quantity.dart';
 
 class ItemCart extends StatelessWidget {
   const ItemCart({super.key});
@@ -30,17 +30,18 @@ class ItemCart extends StatelessWidget {
               ),
             ),
           ),
-          title: const Text('Noodles Ramen', style: TextStyle(fontSize: 14)),
+          title: Text('Noodles Ramen', style: TextStyle(fontSize: 12.sp)),
           subtitle: Text(35000.currenycyFormatRp,
-              style: const TextStyle(fontSize: 14, color: AppColors.primary)),
+              style: TextStyle(fontSize: 12.sp, color: AppColors.primary)),
           trailing: Wrap(
             spacing: 10.w,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children: const [
-              AddQuantity(),
+            children: [
+              const AddQuantity(),
               Text('10',
-                  style: TextStyle(fontSize: 14), textAlign: TextAlign.center),
-              AddQuantity(increment: true),
+                  style: TextStyle(fontSize: 12.sp),
+                  textAlign: TextAlign.center),
+              const AddQuantity(increment: true),
             ],
           ),
         ),

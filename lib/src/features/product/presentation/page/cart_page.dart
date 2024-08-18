@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:kasirku/src/constant/colors.dart';
 import 'package:kasirku/src/core/widgets/space_height.dart';
 import 'package:kasirku/src/core/widgets/text_button_custom.dart';
-import 'package:kasirku/src/features/cart/presentation/widget/item_cart.dart';
-import 'package:kasirku/src/features/cart/presentation/widget/item_list_payment.dart';
-import 'package:kasirku/src/features/checkout/presentation/page/checkout_page.dart';
+import 'package:kasirku/src/features/product/presentation/widget/item_cart.dart';
+import 'package:kasirku/src/features/product/presentation/widget/item_list_payment.dart';
+import 'package:kasirku/src/features/product/presentation/page/checkout_page.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});

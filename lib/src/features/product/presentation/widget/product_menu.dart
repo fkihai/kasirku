@@ -57,7 +57,7 @@ class ProductMenu extends StatelessWidget {
               ),
             ),
             const SpaceHeight(height: 20),
-            Text('Noodles Ramen', style: TextStyle(fontSize: 15.sp)),
+            Text('Noodles Ramen', style: TextStyle(fontSize: 13.sp)),
             const SpaceHeight(height: 10),
             Text(3500.currenycyFormatRp, style: TextStyle(fontSize: 13.sp)),
           ],

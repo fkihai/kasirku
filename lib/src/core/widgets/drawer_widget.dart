@@ -86,9 +86,9 @@ class HeaderWidget extends StatelessWidget {
             children: [
               Text(
                 name.toUpperCase(),
-                style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
               ),
-              Text(email, style: TextStyle(fontSize: 14.sp)),
+              // Text(email, style: TextStyle(fontSize: 14.sp)),
               Text(
                 role,
                 style: TextStyle(fontSize: 14.sp, color: Colors.blue),
