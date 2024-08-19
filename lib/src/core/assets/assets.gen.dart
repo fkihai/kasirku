@@ -26,6 +26,10 @@ class $AssetsImgGen {
   /// File path: assets/img/matcha.png
   AssetGenImage get matcha => const AssetGenImage('assets/img/matcha.png');
 
+  /// File path: assets/img/payment-check.png
+  AssetGenImage get paymentCheck =>
+      const AssetGenImage('assets/img/payment-check.png');
+
   /// File path: assets/img/robusta.png
   AssetGenImage get robusta => const AssetGenImage('assets/img/robusta.png');
 
@@ -34,7 +38,7 @@ class $AssetsImgGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [frenchFries, friedRice, latte, matcha, robusta, taro];
+      [frenchFries, friedRice, latte, matcha, paymentCheck, robusta, taro];
 }
 
 class Assets {

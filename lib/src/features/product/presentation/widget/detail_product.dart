@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kasirku/src/core/utils/int_ext.dart';
 import 'package:kasirku/src/core/widgets/space_width.dart';
 import 'package:kasirku/src/core/widgets/text_button_custom.dart';
@@ -44,7 +45,9 @@ void showCustomModalBottomSheet(BuildContext context) {
               const Spacer(),
               TextButtonCustom(
                 title: 'Add',
-                onPressed: () {},
+                onPressed: () {
+                  context.pop();
+                },
               )
             ],
           ),

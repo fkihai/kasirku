@@ -8,7 +8,7 @@ import 'package:kasirku/src/features/product/presentation/page/product_page.dart
 import '../../features/login/presentation/page/login_page.dart';
 
 final GoRouter routerProvider = GoRouter(
-  initialLocation: '/product/cart/checkout/payment',
+  initialLocation: '/',
   routes: [
     GoRoute(
       path: '/login',

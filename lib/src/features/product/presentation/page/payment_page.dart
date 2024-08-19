@@ -7,6 +7,7 @@ import 'package:kasirku/src/core/widgets/space_height.dart';
 import 'package:kasirku/src/core/widgets/text_button_custom.dart';
 
 import '../../../../constant/colors.dart';
+import '../widget/pay_confirm.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
@@ -15,7 +16,8 @@ class PaymentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Checkout')),
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(title: const Text('Payment')),
       body: Column(
         children: [
           Expanded(
@@ -78,7 +80,8 @@ class PaymentPage extends StatelessWidget {
                     children: [
                       Container(
                         width: 0.42.sw,
-                        padding: EdgeInsets.all(8.0.sp),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.0.w, vertical: 10.h),
                         decoration: BoxDecoration(
                           border:
                               Border.all(color: AppColors.primary, width: 2.0),
@@ -91,7 +94,8 @@ class PaymentPage extends StatelessWidget {
                       const Spacer(),
                       Container(
                         width: 0.42.sw,
-                        padding: EdgeInsets.all(8.0.sp),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.0.w, vertical: 10.h),
                         decoration: BoxDecoration(
                           border: Border.all(
                               color: AppColors.grey.withOpacity(0.4),
@@ -162,7 +166,7 @@ class PaymentPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SpaceHeight(height: 15.h),
+                  SpaceHeight(height: 25.h),
                   const Money(value: 0),
                   SpaceHeight(height: 10.h),
                   Expanded(
@@ -172,7 +176,7 @@ class PaymentPage extends StatelessWidget {
                         crossAxisCount: 2, // Jumlah kolom
                         crossAxisSpacing: 10.0, // Jarak antar kolom
                         mainAxisSpacing: 10.0, // Jarak antar baris
-                        childAspectRatio: 4.0,
+                        childAspectRatio: 3.6,
                       ),
                       itemCount: 4, // Jumlah item dalam grid
                       itemBuilder: (context, index) {
@@ -189,7 +193,9 @@ class PaymentPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
             child: TextButtonCustom(
               title: 'Bayar Langsung',
-              onPressed: () {},
+              onPressed: () {
+                showCustomModalPayCheck(context);
+              },
             ),
           ),
         ],
@@ -205,7 +211,7 @@ class Money extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.sp),
+      padding: EdgeInsets.all(13.sp),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.r),
         color: Colors.blue.shade50,
