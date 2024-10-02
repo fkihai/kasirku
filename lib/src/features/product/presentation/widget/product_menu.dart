@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kasirku/src/core/utils/int_ext.dart';
 
@@ -7,14 +8,21 @@ import '../../../../core/assets/assets.dart';
 import '../../../../core/widgets/space_height.dart';
 import 'detail_product.dart';
 
-class ProductMenu extends StatelessWidget {
+class ProductMenu extends ConsumerWidget {
   const ProductMenu({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
-        showCustomModalBottomSheet(context);
+        showModalBottomSheet(
+          isScrollControlled: true,
+          context: context,
+          builder: (context) => const DetailProduct(
+            price: 16000,
+            stock: 50,
+          ),
+        );
       },
       child: Container(
         decoration: BoxDecoration(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kasirku/src/constant/colors.dart';
 import 'package:kasirku/src/core/widgets/drawer_widget.dart';
 import 'package:kasirku/src/features/product/presentation/widget/item_total.dart';
 import 'package:kasirku/src/features/product/presentation/widget/search_field.dart';
@@ -62,7 +61,7 @@ class ProductPage extends StatelessWidget {
                 ],
               ),
             ),
-            const ItemTotal(totalItem: 2, totalPrice: 956000)
+            const ItemTotal(totalItem: 2, totalPrice: 956000),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kasirku/src/constant/colors.dart';
 import 'package:kasirku/src/core/utils/int_ext.dart';
@@ -6,11 +7,11 @@ import 'package:kasirku/src/core/utils/int_ext.dart';
 import '../../../../core/assets/assets.gen.dart';
 import 'add_quantity.dart';
 
-class ItemCart extends StatelessWidget {
+class ItemCart extends ConsumerWidget {
   const ItemCart({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
       child: Container(
@@ -41,7 +42,9 @@ class ItemCart extends StatelessWidget {
               Text('10',
                   style: TextStyle(fontSize: 12.sp),
                   textAlign: TextAlign.center),
-              const AddQuantity(increment: true),
+              const AddQuantity(
+                increment: true,
+              ),
             ],
           ),
         ),
