@@ -1,9 +1,7 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kasirku/src/core/widgets/drawer_widget.dart';
 import 'package:kasirku/src/core/widgets/space_height.dart';
-import 'package:kasirku/src/core/widgets/space_width.dart';
 
 import '../widget/info_widget.dart';
 

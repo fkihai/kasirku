@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kasirku/src/core/widgets/drawer_widget.dart';
+import 'package:kasirku/src/features/product/domain/entities/product.dart';
 import 'package:kasirku/src/features/product/presentation/widget/item_total.dart';
 import 'package:kasirku/src/features/product/presentation/widget/search_field.dart';
 
+import '../../../../../main.dart';
+import '../../../../../objectbox.g.dart';
 import '../../../../core/widgets/space_height.dart';
 import '../widget/product_category.dart';
 import '../widget/product_menu.dart';
@@ -22,6 +25,9 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Box<Product> itemBox = store.box<Product>();
+    final itemOnChart = itemBox.getAll();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('PRODUCT'),
@@ -61,7 +67,7 @@ class ProductPage extends StatelessWidget {
                 ],
               ),
             ),
-            const ItemTotal(totalItem: 2, totalPrice: 956000),
+            ItemTotal(totalItem: itemOnChart.length, totalPrice: 956000),
           ],
         ),
       ),

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,14 +8,24 @@ import 'package:kasirku/src/core/utils/int_ext.dart';
 import 'package:kasirku/src/core/widgets/text_button_custom.dart';
 import 'package:kasirku/src/features/product/presentation/widget/add_quantity.dart';
 
+import '../../../../../main.dart';
+import '../../../../../objectbox.g.dart';
 import '../../../../constant/colors.dart';
 import '../../../../core/widgets/space_height.dart';
+import '../../domain/entities/product.dart';
 import '../riverpod/counter.dart';
 
 class DetailProduct extends ConsumerWidget {
-  const DetailProduct({super.key, required this.price, required this.stock});
+  DetailProduct({
+    super.key,
+    required this.price,
+    required this.stock,
+    required this.name,
+  });
+  final Box<Product> productBox = store.box<Product>();
   final int price;
   final int stock;
+  final String name;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,7 +40,7 @@ class DetailProduct extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Noodles Ramen', style: TextStyle(fontSize: 20.sp)),
+            Text(name, style: TextStyle(fontSize: 20.sp)),
             Text(price.currenycyFormatRp,
                 style: TextStyle(fontSize: 16.sp, color: AppColors.primary)),
             SpaceHeight(height: 20.h),
@@ -69,9 +81,15 @@ class DetailProduct extends ConsumerWidget {
             TextButtonCustom(
               title: 'Add',
               onPressed: () {
+                productBox.put(Product(
+                  name: name,
+                  qty: count,
+                  price: price,
+                  stock: stock,
+                ));
                 context.pop();
               },
-            )
+            ),
           ],
         ),
       ),

@@ -18,9 +18,10 @@ class ProductMenu extends ConsumerWidget {
         showModalBottomSheet(
           isScrollControlled: true,
           context: context,
-          builder: (context) => const DetailProduct(
+          builder: (context) => DetailProduct(
             price: 16000,
-            stock: 50,
+            stock: 10,
+            name: 'Noodles Ramen',
           ),
         );
       },
